@@ -9,7 +9,7 @@ import {getPlacesData} from './api';
 
 const App = () => {
 
-    const [coordinates, setCoordinates] = useState({lat: 0, lng: 0});
+    const [coordinates, setCoordinates] = useState({});
     const [bounds, setBounds] = useState({});
     const [places, setPlaces] = useState([]);
  
@@ -34,7 +34,7 @@ const App = () => {
             <Header />
             <Grid container spacing={3} style={{ width: '100%' }}>
                 <Grid item xs={12} md={4}>
-                    <List />
+                    <List places={places} />
                 </Grid>
                 <Grid item xs={12} md={8}>
                     <Map    

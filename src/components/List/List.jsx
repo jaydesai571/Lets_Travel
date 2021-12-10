@@ -3,19 +3,19 @@ import { CircularProgrss , Typography, Grid, InputLabel, MenuItem, FormControl, 
 import useStyles from './styles';
 import PlaceDetails from '../PlaceDetails/PlaceDetails';
 
-function List() {
+function List({ places }) {
 
     const classes = useStyles();    
     const [type, setType] = useState('resturants');
     const [rating, setRating] = useState('');
-    const places = [
-        {name: 'Hello'},
-        {name: 'Hello'},
-        {name: 'Hello'},
-        {name: 'Hello'},
-        {name: 'Hello'},
-        {name: 'Hello'}
-    ]
+    // const places = [
+    //     {name: 'Hello'},
+    //     {name: 'Hello'},
+    //     {name: 'Hello'},
+    //     {name: 'Hello'},
+    //     {name: 'Hello'},
+    //     {name: 'Hello'}
+    // ]
     return (
         <div className={classes.container}>
             <Typography variant="h4">Resturants,Hotels & Attractions!</Typography>
