@@ -3,11 +3,11 @@ import GoogleMapReact from 'google-map-react';
 import { Paper, Typography, useMediaQuery } from '@material-ui/core';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import Rating  from '@material-ui/lab/Rating';
-
+// import mapStyles from './mapStyles';
 import useStyles from './styles';
 import { GoogleMap } from '@react-google-maps/api';
 
-function Map({ setCoordinates, setBounds, coordinates, places, setChildClicked }) {
+function Map({ setCoordinates, setBounds, coordinates, places, setChildClicked, weatherData }) {
     const classes = useStyles();
     const isDesktop = useMediaQuery('(min-width:600px)');
 
@@ -52,6 +52,13 @@ function Map({ setCoordinates, setBounds, coordinates, places, setChildClicked }
                                 </Paper>
                             )
                         }
+                    </div>
+                ))}
+
+                {
+                    weatherData?.list?.map((data, i) => (
+                    <div key={i} lat={data.coord.lat} lng={data.coord.lon}>
+                        <img height={100} src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`} />
                     </div>
                 ))}
             </GoogleMapReact>
